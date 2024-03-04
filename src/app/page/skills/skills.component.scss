@@ -30,7 +30,7 @@
   }
 }
 
-.space{
+.space {
   margin: 2.5em;
   color: transparent;
 }
@@ -39,46 +39,39 @@
   .skill-card {
     padding: 1em;
     margin: 5px;
-    width: 70px;
+    max-width: 100px;
+    flex: 1;
     background-color: var(--background-dark);
-  
+
     .icon-skill {
       font-size: 20px;
     }
-  
+
     .name-skill {
       font-size: .6rem;
       max-width: 70px;
       letter-spacing: .7px;
     }
-  }
-
-  .space{
-    margin: 1em;
   }
 }
 
 @media (max-width: 450px) {
-  
+
   .skill-card {
     padding: 1em;
     margin: 4px;
-    width: 70px;
+    max-width: 80px;
     background-color: var(--background-dark);
-  
+    flex: 1;
+
     .icon-skill {
       font-size: 20px;
     }
-  
+
     .name-skill {
       font-size: .6rem;
       max-width: 70px;
       letter-spacing: .7px;
     }
-  }
-
-  
-  .space{
-    margin: .3em;
   }
 }
