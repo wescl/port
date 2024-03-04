@@ -1,0 +1,19 @@
+<!-- pagination.component.html -->
+
+<div class="pagination">
+    <button (click)="onPrevious()" [disabled]="current === 1"><i class="fa-solid fa-caret-left"></i>
+    </button>
+
+    <ng-container *ngFor="let page of pages">
+        <ng-container *ngIf="page !== -1; else ellipsis">
+            <button (click)="onGoTo(page)" [class.active]="current === page"
+                [ngClass]="{ 'page-change-enter': current !== page, 'page-change-leave-to': current !== page }">
+                {{ page }}
+            </button>
+        </ng-container>
+        <ng-template #ellipsis><span class="ellipsis">...</span></ng-template>
+    </ng-container>
+
+    <button (click)="onNext()" [disabled]="current === total"><i class="fa-solid fa-caret-right"></i>
+    </button>
+</div>

@@ -1,0 +1,22 @@
+<div class="container-sidebar" [ngClass]="{'menu-closed': !menuOpen}">
+  <div class="sidebar" [ngClass]="{'menu-display': menuDisplay}">
+    <div class="img-person">
+      <img src="https://wescley.netlify.app/assets/perfil.png" alt="">
+    </div>
+    <ul>
+      <li><a routerLink="/"><i class="fa-solid fa-house"></i> início</a></li>
+      <li><a routerLink="/sobre"><i class="fa-solid fa-address-card"></i> sobre</a></li>
+      <li><a routerLink="/projetos"><i class="fa-solid fa-diagram-project"></i> projetos</a></li>
+      <li><a routerLink="/habilidades"><i class="fa-solid fa-user-gear"></i> habilidades</a></li>
+      <li><a routerLink="/contato"><i class="fa-solid fa-address-book"></i> contato</a></li>
+    </ul>
+  </div>
+
+  <div class="close" (click)="toggleMenu()">
+    <i class="icon"></i>
+  </div>
+
+  <div class="open" (click)="toggleMenu()">
+    <i class="fa-solid fa-bars"></i>
+  </div>
+</div>

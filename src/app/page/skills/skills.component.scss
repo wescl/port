@@ -1,0 +1,84 @@
+.skill-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.5em;
+  margin: 6px;
+  width: 111.2px;
+  background-color: var(--background-dark);
+
+  .icon-skill {
+    font-size: 24px;
+    margin-bottom: 10px;
+    background-image: linear-gradient(45deg, var(--primary), var(--secondary));
+    background-clip: text;
+    color: transparent;
+  }
+
+  .name-skill {
+    font-size: .9rem;
+    max-width: 90px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-transform: uppercase;
+    text-align: start;
+    margin: .5em 0 0 0;
+    color: var(--text);
+    letter-spacing: .9px;
+    opacity: 80%;
+  }
+}
+
+.space{
+  margin: 2.5em;
+  color: transparent;
+}
+
+@media (max-width: 974px) {
+  .skill-card {
+    padding: 1em;
+    margin: 5px;
+    width: 70px;
+    background-color: var(--background-dark);
+  
+    .icon-skill {
+      font-size: 20px;
+    }
+  
+    .name-skill {
+      font-size: .6rem;
+      max-width: 70px;
+      letter-spacing: .7px;
+    }
+  }
+
+  .space{
+    margin: 1em;
+  }
+}
+
+@media (max-width: 450px) {
+  
+  .skill-card {
+    padding: 1em;
+    margin: 4px;
+    width: 70px;
+    background-color: var(--background-dark);
+  
+    .icon-skill {
+      font-size: 20px;
+    }
+  
+    .name-skill {
+      font-size: .6rem;
+      max-width: 70px;
+      letter-spacing: .7px;
+    }
+  }
+
+  
+  .space{
+    margin: .3em;
+  }
+}

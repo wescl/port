@@ -1,0 +1,128 @@
+.contact-form {
+    padding: 1.3em 2em;
+    border-radius: .1em;
+    width: 50%; 
+    margin-top: 3em;
+
+    form {
+        display: flex;
+        flex-direction: column;
+
+        .input {
+            margin-top: 1.3em;
+            opacity: 0.8; /* 80% como valor decimal */
+            position: relative;
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            padding: 1px;
+
+            label {
+                position: absolute;
+                top: .3px;
+                left: 10px;
+                transform: translate(5%, -50%);
+                font-weight: 100;
+                color: var(--primary);
+                transition: font-size 0.3s ease-out;
+                background-color: var(--background);
+                letter-spacing: 1px;
+                font-size: .7em;
+                padding: 0 8px;
+                opacity: 100%;
+            }
+
+            input,
+            textarea {
+                width: 100%;
+                padding: 13px 10px;
+                border: none;
+                border-radius: 0;
+                background: var(--background);
+                box-sizing: border-box;
+                outline: none;
+                color: var(--text);
+                font-weight: 100;
+                letter-spacing: 1px;
+                font-size: 0.9em;
+                box-shadow: rgba(0, 0, 0, 0.295) 0px 2px 8px 0px;
+            }
+
+            textarea {
+                max-width: 100%;
+                min-width: 100%;
+                min-height: 150px;
+                max-height: 300px;
+                margin-bottom: -4px;
+                text-align: justify;
+            }
+        }
+
+        button {
+            padding: 13px;
+            border: none;
+            width: 100%;
+            border-radius: 0;
+            cursor: pointer;
+            margin: 0 auto;
+            margin-top: 1.6em;
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            transition: all .5s;
+            opacity: 0.9; /* 90% como valor decimal */
+            font-size: 0.9em;
+            font-weight: 600;
+            color: var(--background);
+            letter-spacing: 1px;
+
+            i {
+                font-size: 0.8em;
+                margin-left: 2px;
+            }
+
+            &:hover {
+                opacity: 0.7; /* 70% como valor decimal */
+                transition: all .5s;
+            }
+        }
+    }
+
+    .contacts {
+        display: flex;
+        justify-content: center;
+
+        .icon {
+            margin: 0 .7em;
+
+            a {
+                text-decoration: none;
+                background-image: linear-gradient(45deg, var(--primary), var(--secondary));
+                background-clip: text;
+                color: transparent;
+                font-size: 1.8em;
+                transition: all .3s;
+
+                &:hover {
+                    transition: all .3s;
+                    opacity: 0.7; /* 70% como valor decimal */
+                }
+            }
+        }
+    }
+}
+
+.space{
+    margin:2em;
+    color: transparent;
+}
+
+@media (max-width: 768px) {
+    .contact-form {
+        width: 100%;
+    }
+}
+
+.or {
+    position: relative;
+    height: 1px;
+    width: 100%;
+    margin: 1.6em 0 .5em 0;
+    background: var(--background-dark);
+}

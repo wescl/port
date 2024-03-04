@@ -1,0 +1,54 @@
+.container {
+  width: 100%;
+  height: 100vh;
+  padding: 0;
+  margin: 0;
+  box-sizing: 0;
+}
+
+.row {
+  display: flex;
+  height: 100%;
+}
+
+.col-1 {}
+
+.col {
+  flex: 1;
+}
+
+app-sidebar {}
+
+app-tabs {
+  display: none;
+}
+
+.footer {
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: none;
+  padding: 10px;
+  color: var(--text);
+  font-weight: 400;
+  letter-spacing: 2px;
+  text-transform: lowercase;
+  opacity: 5%;
+}
+
+@media (max-width: 1148px) {
+  .container {
+    width: 98%;
+  }
+
+  app-tabs {
+    display: contents;
+  }
+
+  .col-1 {
+    display: none;
+  }
+
+}

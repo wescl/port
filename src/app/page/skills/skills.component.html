@@ -1,0 +1,15 @@
+<div class="space">.</div>
+<app-container>
+    <div class="skill" *ngFor="let skill of skillsToDisplay">
+        <div class="skill-card">
+            <span class="icon-skill"><i class="{{ skill.icon }}"></i></span>
+            <span class="name-skill">{{ skill.name }}</span>
+        </div>
+    </div>
+
+</app-container>
+
+<app-pagination *ngIf="total > 1" [current]="current" [total]="total" (goTo)="onGoTo($event)" (next)="onNext()"
+    (previous)="onPrevious()">
+</app-pagination>
+

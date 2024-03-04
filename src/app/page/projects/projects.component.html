@@ -1,0 +1,20 @@
+<div class="space">.</div>
+<app-container>
+    <div *ngFor="let project of projectsToDisplay" class="img-project" (click)="openModal(project)">
+        <img [src]="project.imageUrl" alt="">
+        <div class="black-opacity"></div>
+        <div class="info-project">
+            <h3>{{ project.title }}</h3>
+            <span class="click">ver mais</span>
+        </div>
+    </div>
+</app-container>
+
+<app-pagination *ngIf="total > 1" [current]="current" [total]="total" (goTo)="onGoTo($event)" (next)="onNext()"
+    (previous)="onPrevious()">
+</app-pagination>
+
+<app-modal
+    [modalData]="{ title: 'Descrição do teste', description: 'Descrição do teste', imageUrl: 'https://www.rhuanbello.com/assets/projects/deathcat.jpg'}"
+    [isOpen]="modalOpen" (closeModal)="closeModal()">
+</app-modal>

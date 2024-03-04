@@ -1,0 +1,9 @@
+<div class="modal" [class.open]="isOpen">
+    <div class="modal-content">
+        <span class="close" (click)="onCloseModal()"><i class="fa-solid fa-xmark"></i></span>
+        <!-- <h1>{{ modalData.title }}</h1>
+        <img [src]="modalData.imageUrl" alt="">
+        <p>{{ modalData.description }}</p> -->
+        <app-modal-project [isOpen]="isOpen"></app-modal-project>
+    </div>
+</div>
