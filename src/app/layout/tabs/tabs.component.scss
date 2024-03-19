@@ -1,169 +1,48 @@
 .container-tabs {
+    background-color: var(--background-dark);
+    padding: 20px 10px;
     position: fixed;
-    z-index: 9999;
+    bottom: 0;
+    width: 100%;
+    z-index: 999;
 
-    .tabs {
-        z-index: 9999;
-        position: fixed;
-        bottom: 0;
+    &.menu-closed {
+        display: none;
+    }
+}
+
+.tabs {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+
+    &.menu-display {
         display: flex;
-        width: 100%;
-        color: var(--text);
-        background: var(--background);
-        transition: all .6s;
-        justify-content: center;
+        justify-content: space-around;
+    }
 
-        ul {
-            display: flex;
-            list-style-type: none;
-            padding: 0 5px;
-            display: flex;
-            width: 100%;
-            justify-content: center;
-        }
+    li {
+        display: inline-block;
+        margin-right: 13px;
+    }
 
-        li {
-            margin: 0 .1em;
-            max-width: 100px;
-            flex: 1;
-            text-align: center;
-            align-items: center;
-            
-            a {
-                display: flex;
-                align-items: center;
-                text-decoration: none;
-                color: var(--text);
-                text-transform: capitalize;
-                padding: 15px;
-                cursor: pointer;
-                display: block;
-                transition: color 0.3s, background-color 0.3s;
-                font-weight: 500;
-                margin-left: .4em;
+    a {
+        text-decoration: none;
+        color: #333;
+        padding: 5px 10px;
+        border-radius: 1px;
+        padding: 10px 15px;
 
-                i {
-                    color: var(--text);
-                    font-size: 1.1em;
-                    margin: 0 .6em;
-                }
-
-                &:hover {
-                    opacity: 80%;
-                    background: var(--background-dark);
-                }
-            }
+        i {
+            color: var(--text);
+            opacity: 80%;
         }
     }
 }
 
 .active-link {
-    opacity: 80%;
-    background: var(--background-dark);
+    opacity: 100%;
+    background: var(--background);
     border-bottom: 2px solid var(--primary);
-}
-
-@media (max-width: 1148px) {}
-
-@media (max-width: 768px) {
-    .container-tabs {
-
-        .tabs {
-            bottom: 3px;
-
-            li {
-                margin: 0 .1em;
-
-                a {
-                    padding: 10px 5px;
-
-                    i {
-                        color: var(--text);
-                        font-size: 1em;
-                        margin: 0 .6em;
-                    }
-
-                    &:hover {
-                        opacity: 80%;
-                        background: var(--background-dark);
-                    }
-                }
-            }
-        }
-
-        .close {
-            padding: 25px;
-            cursor: pointer;
-            position: absolute;
-            right: -25%;
-            top: 50%;
-            transform: translateY(-50%);
-            opacity: 1;
-            transition: all 1s;
-
-            .icon {
-                position: absolute;
-                right: 45%;
-                top: 50%;
-                transform: translateY(-50%);
-                background: linear-gradient(45deg, var(--primary), var(--secondary));
-                width: 23px;
-                height: 22px;
-                clip-path: polygon(13% 0, 13% 50%, 13% 100%, 0 100%, 0% 50%, 0 0);
-                transition: all .3s;
-            }
-
-            &:hover {
-
-                .icon {
-                    clip-path: polygon(39% 0, 13% 50%, 43% 100%, 25% 100%, 0% 50%, 25% 0%);
-
-                }
-            }
-        }
-
-        .open {
-            filter: blur(10px);
-            position: absolute;
-            left: -200px;
-
-            i {
-                background-image: linear-gradient(45deg, var(--primary), var(--secondary));
-                background-clip: text;
-                color: transparent;
-                font-size: 1.7em;
-                transition: all .3s;
-                cursor: pointer;
-
-                &:hover {
-                    transition: all .3s;
-                    background-image: linear-gradient(45deg, var(--secondary), var(--primary));
-                }
-            }
-        }
-
-        .menu-display {
-            position: absolute;
-        }
-
-        &.menu-closed {
-            .tabs {
-                transform: translateX(-100%);
-                transition: all .3s;
-                filter: blur(10px);
-            }
-
-            .open {
-                transition: all .3s;
-                left: 14px;
-                top: 14px;
-                filter: blur(0px);
-            }
-
-            .close {
-                opacity: 0;
-                transition: all .3s;
-            }
-        }
-    }
 }

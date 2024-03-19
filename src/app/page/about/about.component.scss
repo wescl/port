@@ -1,3 +1,8 @@
+.space{
+    color: transparent;
+    opacity: 0;
+}
+
 .container-about {
     width: 100%;
     padding: 0 3em;
@@ -67,5 +72,9 @@
     
     .card-about-2 {
         margin-top: .1em;
+    }
+
+    .space{
+        margin: 70px 0;
     }
 }

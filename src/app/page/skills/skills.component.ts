@@ -14,7 +14,7 @@ export class SkillsComponent {
   modalOpen = false;
   current = 1;
   total = 0;
-  perPage = 19;
+  perPage = 28;
   skillsToDisplay: Skill[] = [];
   skills: Skill[] = [
     { icon: 'fa-brands fa-html5', name: 'HTML5' },

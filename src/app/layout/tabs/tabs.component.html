@@ -1,11 +1,9 @@
-<div class="container-tabs" [ngClass]="{'menu-closed': !menuOpen}">
-  <div class="tabs" [ngClass]="{'menu-display': menuDisplay}">
-    <ul>
-      <li><a routerLink="/"><i class="fa-solid fa-house"></i></a></li>
-      <li><a routerLink="/sobre"><i class="fa-solid fa-address-card"></i></a></li>
-      <li><a routerLink="/projetos"><i class="fa-solid fa-diagram-project"></i></a></li>
-      <li><a routerLink="/habilidades"><i class="fa-solid fa-user-gear"></i></a></li>
-      <li><a routerLink="/contato"><i class="fa-solid fa-address-book"></i></a></li>
-    </ul>
-  </div>
-</div>
+<nav class="container-tabs" [ngClass]="{'menu-closed': !menuOpen}">
+  <ul class="tabs" [ngClass]="{'menu-display': menuDisplay}">
+    <li><a routerLink="/" routerLinkActive="active"><i class="fa-solid fa-house"></i></a></li>
+    <li><a routerLink="/sobre" routerLinkActive="active"><i class="fa-solid fa-address-card"></i></a></li>
+    <li><a routerLink="/projetos" routerLinkActive="active"><i class="fa-solid fa-diagram-project"></i></a></li>
+    <li><a routerLink="/habilidades" routerLinkActive="active"><i class="fa-solid fa-user-gear"></i></a></li>
+    <li><a routerLink="/contato" routerLinkActive="active"><i class="fa-solid fa-address-book"></i></a></li>
+  </ul>
+</nav>

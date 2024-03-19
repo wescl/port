@@ -1,7 +1,7 @@
 .contact-form {
     padding: 1.3em 2em;
     border-radius: .1em;
-    width: 50%; 
+    width: 50%;
     margin-top: 3em;
 
     form {
@@ -10,17 +10,15 @@
 
         .input {
             margin-top: 1.3em;
-            opacity: 0.8; /* 80% como valor decimal */
+            opacity: 0.8;
             position: relative;
-            background: linear-gradient(45deg, var(--primary), var(--secondary));
-            padding: 1px;
 
             label {
                 position: absolute;
                 top: .3px;
                 left: 10px;
                 transform: translate(5%, -50%);
-                font-weight: 100;
+                font-weight: 500;
                 color: var(--primary);
                 transition: font-size 0.3s ease-out;
                 background-color: var(--background);
@@ -34,7 +32,6 @@
             textarea {
                 width: 100%;
                 padding: 13px 10px;
-                border: none;
                 border-radius: 0;
                 background: var(--background);
                 box-sizing: border-box;
@@ -43,13 +40,15 @@
                 font-weight: 100;
                 letter-spacing: 1px;
                 font-size: 0.9em;
-                box-shadow: rgba(0, 0, 0, 0.295) 0px 2px 8px 0px;
+                font-weight: 400;
+                border: 4px solid var(--background-dark);
+
             }
 
             textarea {
                 max-width: 100%;
                 min-width: 100%;
-                min-height: 150px;
+                min-height: 250px;
                 max-height: 300px;
                 margin-bottom: -4px;
                 text-align: justify;
@@ -57,20 +56,21 @@
         }
 
         button {
-            padding: 13px;
+            padding: 16px 10px;
             border: none;
-            width: 100%;
-            border-radius: 0;
+            width: 60%;
+            border-radius: 1px;
             cursor: pointer;
             margin: 0 auto;
-            margin-top: 1.6em;
+            margin-top: 2em;
             background: linear-gradient(45deg, var(--primary), var(--secondary));
             transition: all .5s;
-            opacity: 0.9; /* 90% como valor decimal */
+            opacity: 0.8;
             font-size: 0.9em;
             font-weight: 600;
             color: var(--background);
             letter-spacing: 1px;
+            text-transform: uppercase;
 
             i {
                 font-size: 0.8em;
@@ -78,8 +78,9 @@
             }
 
             &:hover {
-                opacity: 0.7; /* 70% como valor decimal */
+                opacity: 1;
                 transition: all .5s;
+                box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
             }
         }
     }
@@ -96,32 +97,67 @@
                 background-image: linear-gradient(45deg, var(--primary), var(--secondary));
                 background-clip: text;
                 color: transparent;
-                font-size: 1.8em;
+                font-size: 2em;
                 transition: all .3s;
+                opacity: 80%;
 
                 &:hover {
                     transition: all .3s;
-                    opacity: 0.7; /* 70% como valor decimal */
+                    opacity: 100%;
+                    /* 70% como valor decimal */
                 }
             }
         }
     }
 }
 
-.space{
-    margin:2em;
+.space {
     color: transparent;
 }
 
 @media (max-width: 768px) {
+
+    .space {
+        margin: 4em;
+    }
+
+    .space2 {
+        margin: 1em;
+    }
+
     .contact-form {
         width: 100%;
+
+        form {
+            .input {
+                label {
+                }
+
+                input,
+                textarea {
+                }
+
+                textarea {
+                }
+            }
+
+            button {   
+                width: 98%;
+            }
+        }
+
+        .contacts {
+        
+            .icon {
+                
+            }
+        }
     }
 }
 
 .or {
     position: relative;
-    height: 1px;
+    height: 2px;
     width: 100%;
     margin: 1.6em 0 .5em 0;
     background: var(--background-dark);

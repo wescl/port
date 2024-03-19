@@ -1,10 +1,21 @@
+.space {
+  opacity: 0;
+}
+
+.container-skill {
+  display: flex;
+  flex-wrap: wrap;
+  width: 88.2%;
+  margin-top: 2em;
+}
+
 .skill-card {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 1.5em;
   margin: 6px;
-  width: 111.2px;
+  width: 91.2px;
   background-color: var(--background-dark);
 
   .icon-skill {
@@ -17,7 +28,7 @@
 
   .name-skill {
     font-size: .9rem;
-    max-width: 90px;
+    max-width: 80px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -30,12 +41,15 @@
   }
 }
 
-.space {
-  margin: 2.5em;
-  color: transparent;
-}
-
 @media (max-width: 974px) {
+  .space{
+    margin: 80px;
+  }
+
+  .container-skill {
+    margin-top: 1em;
+  }
+
   .skill-card {
     padding: 1em;
     margin: 5px;

@@ -1,6 +1,10 @@
+.space{
+    opacity: 0;
+}
+
 .col {
     flex: 1;
-    margin-top: 12em;
+    margin-top: 14em;
     padding-bottom: 50px;
 }
 
@@ -118,6 +122,10 @@
 @media (max-width: 1148px) {}
 
 @media (max-width: 766px) {
+    .space {
+        margin: 80px 0;
+    }
+
     .img-op0 {
         display: none;
     }
@@ -146,6 +154,7 @@
 
     .img-home {
         margin-top: -1em;
+
         img {
             width: 200px;
         }
