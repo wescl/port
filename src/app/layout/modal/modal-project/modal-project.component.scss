@@ -88,8 +88,13 @@
         }
     }
 
-    .video {}
+    .video {
+        width: 100%;
 
+        iframe {
+            height: 400px;
+        }
+    }
 }
 
 @keyframes rotate {

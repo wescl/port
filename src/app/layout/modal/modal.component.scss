@@ -54,14 +54,10 @@
 
 @media (max-width: 1200px) {
   .modal {
-  
     .modal-content {
       width: 90%;
-  
-      .close {
-        
-      }
+      padding: 10px;
+      margin: 10px auto;
     }
   }
-  
 }
