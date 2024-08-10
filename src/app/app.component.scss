@@ -17,9 +17,8 @@
 }
 
 .col {
-  position: relative;
   flex: 1;
-  margin: 100px;
+  margin: 100px 0;
 }
 
 app-sidebar {}
@@ -30,26 +29,21 @@ app-tabs {
 
 .gif-container {
   position: absolute;
-  bottom: -100px;
-  left: -109px;
+  bottom: 0;
+  left: 5px;
   display: flex;
   background-color: none;
   padding: 0;
-  box-sizing: border-box;
   opacity: 40%;
 
   .gif-image {
-    width: 13%;
+    width: 40px;
     height: auto;
-    border-radius: 8px;
   }
 
   .message {
-    margin-top: 20px;
-    margin-left: 5px;
-    font-size: 1em;
-    color: rgb(230, 230, 230);
-    font-weight: 200;
+    color: gray;
+    margin-left: 10px;
   }
 }
 
