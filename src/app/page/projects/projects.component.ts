@@ -1,8 +1,14 @@
 import { Component, OnInit } from '@angular/core';
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
+import projectsData from './projects.json';
 
 interface Projects {
-  imageUrl: string;
+  status?: boolean;
   title: string;
+  description: string;
+  tech: string[];
+  linkVideo: string;
+  imageUrl: string;
 }
 
 @Component({
@@ -10,40 +16,40 @@ interface Projects {
   templateUrl: './projects.component.html',
   styleUrls: ['./projects.component.scss']
 })
-
 export class ProjectsComponent implements OnInit {
+  projects: Projects[] = projectsData as Projects[];
   modalOpen = false;
   current = 1;
   total = 0;
   perPage = 4;
   projectsToDisplay: Projects[] = [];
-  projects: Projects[] = [
-    { imageUrl: 'https://www.rhuanbello.com/assets/projects/calculadora.jpg', title: 'banana' },
-    { imageUrl: 'https://www.rhuanbello.com/assets/projects/deathcat.jpg', title: 'Gereto' },
-    { imageUrl: 'https://images.pexels.com/photos/1612351/pexels-photo-1612351.jpeg?auto=compress&cs=tinysrgb&w=400', title: 'limão' },
-    { imageUrl: 'https://images.pexels.com/photos/36717/amazing-animal-beautiful-beautifull.jpg?auto=compress&cs=tinysrgb&w=400', title: 'abacate' },
-    { imageUrl: 'https://images.pexels.com/photos/1612351/pexels-photo-1612351.jpeg?auto=compress&cs=tinysrgb&w=400', title: 'Projeto' },
-    { imageUrl: 'https://images.pexels.com/photos/36717/amazing-animal-beautiful-beautifull.jpg?auto=compress&cs=tinysrgb&w=400', title: 'beringela' },
-    { imageUrl: 'https://images.pexels.com/photos/1612351/pexels-photo-1612351.jpeg?auto=compress&cs=tinysrgb&w=400', title: 'Projeto' },
-    { imageUrl: 'https://images.pexels.com/photos/36717/amazing-animal-beautiful-beautifull.jpg?auto=compress&cs=tinysrgb&w=400', title: 'cuscuz' },
-    { imageUrl: 'https://images.pexels.com/photos/1612351/pexels-photo-1612351.jpeg?auto=compress&cs=tinysrgb&w=400', title: 'Projeto' },
-    { imageUrl: 'https://images.pexels.com/photos/36717/amazing-animal-beautiful-beautifull.jpg?auto=compress&cs=tinysrgb&w=400', title: 'Projeto' },
-    { imageUrl: 'https://images.unsplash.com/photo-1431440869543-efaf3388c585?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8Mnx8fGVufDB8fHx8fA%3D%3D', title: 'Projeto' },
+  selectedProject: Projects | null = null;
+  videoUrl!: SafeResourceUrl;
 
-  ];
-  title = "";
+  constructor(private sanitizer: DomSanitizer) { }
 
   openModal(project: Projects) {
-    this.modalOpen = !this.modalOpen;
+    this.selectedProject = project;
+    console.log('Link do vídeo do projeto selecionado:', this.selectedProject.linkVideo);
+    this.videoUrl = this.sanitizer.bypassSecurityTrustResourceUrl(this.selectedProject.linkVideo);
+    console.log('videoUrl:', this.videoUrl);
+    this.modalOpen = true;
   }
 
   closeModal() {
-    this.modalOpen = !this.modalOpen;
+    this.modalOpen = false;
   }
 
   ngOnInit(): void {
     this.total = Math.ceil(this.projects.length / this.perPage);
     this.updateProjectsToDisplay();
+
+    console.log('Projects:', this.projects);
+
+    if (this.selectedProject) {
+      this.videoUrl = this.sanitizer.bypassSecurityTrustResourceUrl(this.selectedProject.linkVideo);
+      console.log('videoUrl:', this.videoUrl);
+    }
   }
 
   onGoTo(page: number): void {

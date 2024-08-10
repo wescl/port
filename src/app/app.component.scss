@@ -18,6 +18,7 @@
 
 .col {
   flex: 1;
+  margin: 100px;
 }
 
 app-sidebar {}
@@ -44,6 +45,11 @@ app-tabs {
 @media (max-width: 1148px) {
   .container {
     width: 98%;
+  }
+
+  .col {
+    flex: 1;
+    margin: 4px;
   }
 
   app-tabs {

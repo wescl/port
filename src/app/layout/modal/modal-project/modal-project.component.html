@@ -1,35 +1,26 @@
 <div class="container-modal-project" [class.open]="isOpen">
     <div class="info-project">
-    <span class="status"><i class="fa-solid fa-circle-notch"></i> Em andamento</span>
+        <span class="status-check" *ngIf="modalData.status === true"><i class="fa-solid fa-circle-check"></i>
+            Concluído</span>
+        <span class="status" *ngIf="modalData.status === false"><i class="fa-solid fa-circle-notch"></i> Em
+            andamento</span>
 
-        <h1>GGrid - Aplicativo Mobile</h1>
+        <h1>{{ modalData.title }}</h1>
         <p>
-            A brisa suave acariciava as folhas das árvores, enquanto o sol se despedia no horizonte. O céu tingia-se de
-            tons quentes, criando um espetáculo de cores. No silêncio, os pássaros encerravam sua sinfonia diária. A
-            cidade adormecia lentamente, entregando-se à serenidade da noite. Estrelas pontilhavam o firmamento, como
-            diamantes cintilantes. Ruas desertas guardavam histórias e segredos sob o manto escuro. Uma paz envolvente
-            pairava no ar, convidando todos a se renderem ao descanso merecido. Nas sombras, a lua assumia seu reinado,
-            iluminando suavemente o mundo noturno. Nesse instante mágico, a vida se acalmava, revelando a beleza
-            tranquila que reside no equilíbrio entre o dia e a noite, revelando a beleza
-            tranquila que reside no equilíbrio entre o dia e a noite, revelando a beleza
-            pairava no ar, convidando todos a se renderem ao descanso merecido. Nas sombras, a lua assumia seu reinado,
-            iluminando suavemente o mundo noturno. Nesse instante mágico, a vida se acalmava, revelando a beleza
-            tranquila que reside no equilíbrio entre o dia e a noite, revelando a beleza
-            tranquila que reside no equilíbrio entre o dia e a noite, revelando a beleza
-            tranquila que reside no equilíbrio entre o dia e a noite, revelando a beleza
+            {{ modalData.description }}
         </p>
     </div>
 
     <div class="tec-use">
-        <div class="tec-card" *ngFor="let tecnologia of tecnologias">
-            <span>{{ tecnologia }}</span>
+        <div class="tec-card" *ngFor="let technology of modalData?.tech">
+            <span>{{ technology }}</span>
         </div>
     </div>
 
     <button class="button-1">acessar projeto <i class="fa-solid fa-link"></i></button>
 
     <div class="video">
-        <iframe width="100%" height="350" src="https://www.youtube.com/embed/GxldQ9eX2wo?si=Bl0E4V1Wv1fVERt5"
+        <iframe width="100%" height="350" [src]="modalData.videoUrl"
             title="YouTube video player" frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowfullscreen></iframe>

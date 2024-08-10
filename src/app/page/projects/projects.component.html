@@ -5,9 +5,9 @@
         </div>
         <div class="overlay"></div>
         <div class="project-title">
-          <h3>{{ project.title }}</h3>
+            <h3>{{ project.title }}</h3>
         </div>
-      </div>
+    </div>
 </app-container>
 
 <app-pagination *ngIf="total > 1" [current]="current" [total]="total" (goTo)="onGoTo($event)" (next)="onNext()"
@@ -17,6 +17,13 @@
 <div class="space">.</div>
 
 <app-modal
-    [modalData]="{ title: 'Descrição do teste', description: 'Descrição do teste', imageUrl: 'https://www.rhuanbello.com/assets/projects/deathcat.jpg'}"
-    [isOpen]="modalOpen" (closeModal)="closeModal()">
+  [modalData]="{ 
+    status: selectedProject?.status || false, 
+    title: selectedProject?.title || '', 
+    description: selectedProject?.description || '', 
+    tech: selectedProject?.tech || [], 
+    videoUrl: videoUrl || '' 
+  }"
+  [isOpen]="modalOpen" 
+  (closeModal)="closeModal()">
 </app-modal>

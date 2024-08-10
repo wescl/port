@@ -1,0 +1,51 @@
+[
+    {
+        "status": true,
+        "title": "GGrid",
+        "description": "O GGrid é um aplicativo que conecta jogadores que estão em busca de companheiros. A ideia surgiu ao observar muitos comentários em comunidades de jogos, onde muitos jogadores expressavam o desejo de jogar determinado jogo, mas não podiam porque seus amigos não tinham o mesmo jogo e eles não conheciam outras pessoas que o possuíam. Com o GGrid, basta alguns cliques para escolher a plataforma e o jogo desejado. O aplicativo então busca por jogadores com as mesmas preferências e, quando alguém com a mesma seleção também estiver procurando, ocorre a conexão. A partir daí, vocês podem ir para o chat integrado do aplicativo para trocar informações de contato e combinar como vão se comunicar durante o jogo. O GGrid facilita encontrar novos amigos de jogo e garante que você nunca mais precise jogar sozinho.",
+        "tech": [
+            "ionic",
+            "angular",
+            "firebase",
+            "scss",
+            "capacitor"
+        ],
+        "linkVideo": "https://www.youtube.com/embed/qxOkaU6RVz4?si=-s_3K_-Ovs480SKb",
+        "imageUrl": "https://firebasestorage.googleapis.com/v0/b/portifolio-eeb9f.appspot.com/o/GGrid%2FGGrid-Port.png?alt=media&token=8ed37fdd-629f-400f-ad27-c33da07fc0d4"
+    },
+    {
+        "status": true,
+        "title": "Gereto",
+        "description": "O Gereto é um projeto desenvolvido durante o curso de Matheus Battisti - Hora de Codar, com algumas melhorias feitas por mim ao longo do curso. O gereto é um gerenciador de projetos simples desenvolvido em React, com uma API Node.js conectada ao MongoDB. O funcionamento básico do Gereto é simples. Você inicia adicionando um novo projeto, onde são solicitadas informações como nome, orçamento disponível, categoria e descrição. Após adicionar um projeto, você tem a capacidade de visualizá-lo e, se necessário, editar suas informações. A funcionalidade de edição permite a adição de serviços ao projeto.você pode especificar o tipo de serviço, seu valor e uma descrição. É possível remover serviços específicos ou realizar edições no projeto. Todas essas operações são realizadas por meio de uma interface de usuário simples e intuitiva, utilizando modais para melhorar a experiência do usuário. Caso decida testar, por favor, esteja ciente de possíveis lentidões na API devido ao plano gratuito de hospedagem.",
+        "tech": [
+            "react",
+            "scss",
+            "nodejs",
+            "mongodb"
+        ],
+        "linkVideo": "https://www.youtube.com/embed/qxOkaU6RVz4?si=-s_3K_-Ovs480SKb",
+        "imageUrl": "https://firebasestorage.googleapis.com/v0/b/portifolio-eeb9f.appspot.com/o/Gereto%2Fgereto-port.png?alt=media&token=6b82b2f3-1867-4979-add3-81023a3d19f7"
+    },
+    {
+        "status": false,
+        "title": "Joytest",
+        "description": "testando 3",
+        "tech": [
+            "pepino",
+            "feijao"
+        ],
+        "linkVideo": "https://www.youtube.com/embed/qxOkaU6RVz4?si=-s_3K_-Ovs480SKb",
+        "imageUrl": "https://images.pexels.com/photos/1612351/pexels-photo-1612351.jpeg?auto=compress&cs=tinysrgb&w=400"
+    },
+    {
+        "status": false,
+        "title": "Genario",
+        "description": "testando  4",
+        "tech": [
+            "cu",
+            "feijao"
+        ],
+        "linkVideo": "https://www.youtube.com/embed/qxOkaU6RVz4?si=-s_3K_-Ovs480SKb",
+        "imageUrl": "https://images.pexels.com/photos/1612351/pexels-photo-1612351.jpeg?auto=compress&cs=tinysrgb&w=400"
+    }
+]

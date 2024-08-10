@@ -1,9 +1,12 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { SafeResourceUrl } from '@angular/platform-browser';
 
 export interface ModalData {
+  status: boolean;
   title: string;
   description: string;
-  imageUrl: string;
+  tech: string[];
+  videoUrl: SafeResourceUrl;
 }
 
 @Component({
@@ -14,10 +17,12 @@ export interface ModalData {
 export class ModalComponent {
 
   @Input() isOpen = false;
-  @Input() modalData: ModalData = { title: '', description: '' , imageUrl: ''};
+  @Input() modalData: ModalData = { status: false, title: '', description: '', tech: [], videoUrl: '' };
   @Output() closeModal = new EventEmitter<void>();
 
   onCloseModal() {
     this.closeModal.emit();
   }
+
+
 }
