@@ -1,43 +1,81 @@
 <div class="space2">.</div>
 
 <app-container>
-    <div class="contact-form">
-        <div class="contacts">
-            <div class="icon">
-                <a href="https://wa.me/qr/CZRDQ6OUDU6TL1" target="_blank">
-                    <i class="fab fa-whatsapp"></i>
-                </a>
-            </div>
-
-            <div class="icon">
-                <a href="mailto:wescleyasr@gmail.com" target="_blank">
-                    <i class="far fa-envelope"></i>
-                </a>
-            </div>
-
-            <div class="icon">
-                <a href="https://www.linkedin.com/in/zwescley/" target="_blank">
-                    <i class="fab fa-linkedin-in"></i>
-                </a>
-            </div>
-        </div>
-        <div class="or">
-           
-        </div>
-        <form>
-            <div class="input">
-                <label for="name">Nome</label>
-                <input type="text" name="name" id="name" placeholder="" required>
-            </div>
-
-            <div class="input">
-                <label for="message">Mensagem</label>
-                <textarea name="message" id="message" required></textarea>
-            </div>
-
-            <button type="submit">Enviar Mensagem <i class="fa-solid fa-paper-plane"></i></button>
-        </form>
+  <div class="contact-form">
+    <!-- Mensagem de sucesso -->
+    <div *ngIf="showMessage" class="success-message">
+      Mensagem enviada com sucesso!
     </div>
+
+    <div class="contacts">
+      <div class="icon">
+        <a href="https://wa.me/qr/CZRDQ6OUDU6TL1" target="_blank">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </div>
+
+      <div class="icon">
+        <a href="mailto:wescleyasr@gmail.com" target="_blank">
+          <i class="far fa-envelope"></i>
+        </a>
+      </div>
+
+      <div class="icon">
+        <a href="https://www.linkedin.com/in/zwescley/" target="_blank">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </div>
+    </div>
+    <div class="or"></div>
+    <form #contactForm="ngForm" (ngSubmit)="addMessage(contactForm)">
+      <div class="input">
+        <label for="name">Nome</label>
+        <input
+          [(ngModel)]="nome"
+          name="name"
+          id="name"
+          placeholder=""
+          required
+          #name="ngModel"
+        />
+        <div *ngIf="name.invalid && (name.dirty || name.touched)" class="error">
+          Nome é obrigatório.
+        </div>
+      </div>
+
+      <div class="input">
+        <label for="message">Mensagem</label>
+        <textarea
+          [(ngModel)]="mensagem"
+          name="message"
+          id="message"
+          required
+          #message="ngModel"
+        ></textarea>
+        <div *ngIf="message.invalid && (message.dirty || message.touched)" class="error">
+          Mensagem é obrigatória.
+        </div>
+      </div>
+
+      <button
+        type="submit"
+        [disabled]="isButtonDisabled || contactForm.invalid || isLoading"
+        class="submit-button"
+      >
+        <ng-container *ngIf="isLoading; else sendText">
+          <span class="spinner"></span> Enviando...
+        </ng-container>
+        <ng-template #sendText>
+          <ng-container *ngIf="isButtonDisabled; else defaultText">
+            <span class="animate-text">{{ timeRemaining }}s</span>
+          </ng-container>
+          <ng-template #defaultText>
+            Enviar Mensagem <i class="fa-solid fa-paper-plane"></i>
+          </ng-template>
+        </ng-template>
+      </button>
+    </form>
+  </div>
 </app-container>
 
 <div class="space">.</div>

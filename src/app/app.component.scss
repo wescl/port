@@ -17,6 +17,7 @@
 }
 
 .col {
+  position: relative;
   flex: 1;
   margin: 100px;
 }
@@ -26,6 +27,32 @@ app-sidebar {}
 app-tabs {
   display: none;
 }
+
+.gif-container {
+  position: absolute;
+  bottom: -100px;
+  left: -109px;
+  display: flex;
+  background-color: none;
+  padding: 0;
+  box-sizing: border-box;
+  opacity: 40%;
+
+  .gif-image {
+    width: 13%;
+    height: auto;
+    border-radius: 8px;
+  }
+
+  .message {
+    margin-top: 20px;
+    margin-left: 5px;
+    font-size: 1em;
+    color: rgb(230, 230, 230);
+    font-weight: 200;
+  }
+}
+
 
 .footer {
   text-align: center;
